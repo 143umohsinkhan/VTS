@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="18c5d1cd9c414c7cbfac376de9317458" Name="Diagram1">
+        <EntityTypeShape EntityType="VTSDBModel.VTSUSER" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VTSDBModel.Answer1" Width="1.5" PointX="3" PointY="7" />
+        <EntityTypeShape EntityType="VTSDBModel.Answer2" Width="1.5" PointX="6" PointY="1" />
+        <EntityTypeShape EntityType="VTSDBModel.Option1" Width="1.5" PointX="3" PointY="9.625" />
+        <EntityTypeShape EntityType="VTSDBModel.Option2" Width="1.5" PointX="6" PointY="3.625" />
+        <EntityTypeShape EntityType="VTSDBModel.Question1" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="VTSDBModel.Question2" Width="1.5" PointX="3.75" PointY="2.25" />
+        <AssociationConnector Association="VTSDBModel.FK__Answer1__Questio__49C3F6B7" />
+        <AssociationConnector Association="VTSDBModel.FK__Answer2__Questio__5165187F" />
+        <AssociationConnector Association="VTSDBModel.FK__Option1__Questio__440B1D61" />
+        <AssociationConnector Association="VTSDBModel.FK__Option2__Questio__4E88ABD4" />
+        <EntityTypeShape EntityType="VTSDBModel.TestPaper" Width="1.5" PointX="5.375" PointY="10.625" />
+        <EntityTypeShape EntityType="VTSDBModel.TestQuestion" Width="1.5" PointX="7.625" PointY="18.125" />
+        <EntityTypeShape EntityType="VTSDBModel.UserTest" Width="1.5" PointX="7.625" PointY="6.75" />
+        <EntityTypeShape EntityType="VTSDBModel.UserTestAnswer" Width="1.5" PointX="8.625" PointY="2.25" />
+        <AssociationConnector Association="VTSDBModel.FK__TestQuest__TestP__5FB337D6" />
+        <AssociationConnector Association="VTSDBModel.FK__UserTest__TestID__6C190EBB" />
+        <AssociationConnector Association="VTSDBModel.FK__UserTestA__TestI__73BA3083" />
+        <AssociationConnector Association="VTSDBModel.FK__UserTest__UserID__6B24EA82" />
+        <AssociationConnector Association="VTSDBModel.FK__UserTestA__UserI__72C60C4A" />
+        <AssociationConnector Association="VTSDBModel.FK__UserTestA__UserT__208CD6FA" />
+        <EntityTypeShape EntityType="VTSDBModel.Answer3" Width="1.5" PointX="13.625" PointY="0.875" />
+        <EntityTypeShape EntityType="VTSDBModel.Answer4" Width="1.5" PointX="9.625" PointY="10.875" />
+        <EntityTypeShape EntityType="VTSDBModel.Answer5" Width="1.5" PointX="12.625" PointY="6.875" />
+        <EntityTypeShape EntityType="VTSDBModel.Question3" Width="1.5" PointX="11.375" PointY="1" />
+        <EntityTypeShape EntityType="VTSDBModel.Question4" Width="1.5" PointX="7.375" PointY="11" />
+        <EntityTypeShape EntityType="VTSDBModel.Question5" Width="1.5" PointX="10.375" PointY="7" />
+        <AssociationConnector Association="VTSDBModel.FK__Answer3__Questio__1FCDBCEB" />
+        <AssociationConnector Association="VTSDBModel.FK__Answer4__Questio__2C3393D0" />
+        <AssociationConnector Association="VTSDBModel.FK__Answer5__Questio__30F848ED" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{31A185E1-77A3-4D9E-9D47-48985F45D784}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Answer1.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Answer2.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Answer3.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Answer4.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Answer5.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IRepositories\IRepository.cs" />
+    <Compile Include="Model\ExamViewModel.cs" />
+    <Compile Include="Model\Metadata.cs" />
+    <Compile Include="Model\PartialClass.cs" />
+    <Compile Include="Model\QuestionType.cs" />
+    <Compile Include="Model\TestQuestionViewModel.cs" />
+    <Compile Include="Option1.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Option2.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question1.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Question2.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Question3.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Question4.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Question5.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\ExamManager.cs" />
+    <Compile Include="Repositories\TestQuestionManager.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="TestPaper.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TestQuestion.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTest.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTestAnswer.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VTSDBEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VTSDBEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VTSDBEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VTSDBEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VTSDBEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="VTSUSER.cs">
+      <DependentUpon>VTSDBEntities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBScripts\27_Feb_CreateUserTableScript.sql" />
+    <Content Include="DBScripts\Answer1.sql" />
+    <Content Include="DBScripts\Answer2.sql" />
+    <Content Include="DBScripts\Answer3.sql" />
+    <Content Include="DBScripts\Answer4.sql" />
+    <Content Include="DBScripts\Answer5.sql" />
+    <Content Include="DBScripts\Constraints.sql" />
+    <Content Include="DBScripts\Option1.sql" />
+    <Content Include="DBScripts\Option2.sql" />
+    <Content Include="DBScripts\Question1.sql" />
+    <Content Include="DBScripts\Question2.sql" />
+    <Content Include="DBScripts\Question3.sql" />
+    <Content Include="DBScripts\Question4.sql" />
+    <Content Include="DBScripts\Question5.sql" />
+    <Content Include="DBScripts\TestPaperTable.sql" />
+    <Content Include="DBScripts\TestQuestionTable.sql" />
+    <Content Include="DBScripts\UserTest.sql" />
+    <Content Include="DBScripts\UserTestAnswerTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="VTSDBEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>VTSDBEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="VTSDBEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VTSDBEntities.edmx</DependentUpon>
+      <LastGenOutput>VTSDBEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="VTSDBEntities.edmx.diagram">
+      <DependentUpon>VTSDBEntities.edmx</DependentUpon>
+    </None>
+    <None Include="VTSDBEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>VTSDBEntities.edmx</DependentUpon>
+      <LastGenOutput>VTSDBEntities.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{2632d41f-edca-4458-8db3-3d9213dab221}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,27 @@
+﻿@model DAL.Model.ExamViewModel
+@{
+    ViewBag.Title = "StartTest";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Start Test</h2>
+
+<table>
+    <tr>
+        <td>@Html.ActionLink("Previous", "Previous")</td>
+        <td> Center Caption</td>
+        <td>@Html.ActionLink("Next", "Next")</td>
+    </tr>
+</table>
+<div id="partialDiv">
+    @{
+        string partialName = Convert.ToString(ViewBag.PartialName);
+        if (Model.CurrentQuestion != null)
+        {
+            @Html.Partial(partialName, Model.CurrentQuestion);
+        }
+    }
+</div>
+
+
+

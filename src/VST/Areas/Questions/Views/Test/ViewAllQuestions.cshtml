@@ -1,0 +1,32 @@
+﻿@model DAL.Models.QuestionViewModels
+
+@{
+    ViewBag.Title = "View All Questions";
+}
+<hr />
+<table class="table">
+    <tr>
+        <th>
+            Question Name
+        </th>
+        <th>
+            Add
+        </th>
+    </tr>
+    @if (Model != null)
+    {
+        foreach (var item in Model.Questions)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuestionText)
+                </td>
+                <td>
+                    @Html.ActionLink("Add Questions", "AddQuestion", new { testId = Model.TestID, QuestionID = item.QuestionID, QuestionType = item.QuestionType })
+                </td>
+            </tr>
+        }
+    }
+</table>
+
+@Html.ActionLink("Finish", "ViewAllTestPapers")

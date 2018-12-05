@@ -1,0 +1,53 @@
+﻿@model VST.Areas.Questions.Models.QuestionnairesViewModel
+
+@{
+    ViewBag.Title = "Test Paper Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Test Paper Questions</h2>
+<h2 style="color:greenyellow">@ViewBag.AddQuestionToTestPaperResponse</h2>
+<div class="form-horizontal">
+    <hr />
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.QuestionType, htmlAttributes: new { @class = "control-label col-md-2" })
+
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.QuestionType, new List<SelectListItem>{
+            new SelectListItem {Text="Fill Blanks",Value="1"},
+            new SelectListItem {Text="MCQ",Value="2"},
+            new SelectListItem {Text="Section 3",Value="3"},
+            new SelectListItem {Text="Section 4",Value="4"},
+            new SelectListItem {Text="Section 5",Value="5"}}, "--Select Question Type--", new { @class = "form-control", id = "ddlQuestionType" })
+        </div>
+        <div id="partialDiv">
+            @Html.Partial("ViewAllQuestions")
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ddlQuestionType").on("change", function () {
+                debugger;
+                $.ajax(
+                    {
+                        url: '/Questions/Test/ViewAllQuestions?QuestionType=' + $("#ddlQuestionType").val() + '&TestID=' + @ViewBag.TestID,
+                        type: 'GET',
+                        data: "",
+                        contentType: 'application/json; charset=utf-8',
+                        success: function (data) {
+                            $("#partialDiv").html(data);
+                        },
+                        error: function () {
+                            alert("error");
+                        }
+                    });
+            });
+        });
+    </script>
+}
+

@@ -1,0 +1,124 @@
+﻿@model VST.Areas.Questions.Models.QuestionnairesViewModel
+
+@{
+    //ViewBag.Title = "Questionnaires";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Questionnaire</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+       @if (ViewBag.SuccessMsg != null)
+       {
+           <div class="alert alert-success">@ViewBag.SuccessMsg</div>
+       }
+       @if (ViewBag.ErrorMsg != null)
+       {
+        <div class="alert alert-danger">@ViewBag.ErrorMsg</div>
+       }
+       
+        <div class="form-group">
+            @Html.LabelFor(model => model.QuestionType, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.QuestionType, new List<SelectListItem>{
+                new SelectListItem {Text="Fill Blanks",Value="1"},
+                new SelectListItem {Text="MCQ",Value="2"},
+                new SelectListItem {Text="Complete Sentence",Value="3"},
+                new SelectListItem {Text="Rearrange Sentence",Value="4"},
+                new SelectListItem {Text="Correct Errors",Value="5"}}, "--Select Question Type--", new { @class = "form-control", @onchange = "ShowOptions()" })
+                @Html.ValidationMessageFor(model => model.QuestionText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.QuestionText, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.QuestionText, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.QuestionText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group" id="QuestionOptions" style="display:none;">
+            <label class="control-label col-md-2">Options </label>
+            <div class="col-md-10">
+                <div id="OtherOptions">
+                    @*<textarea class="form-control" name="Options" placeholder="Option 1"></textarea>*@
+                </div>
+                <a href="#" onclick="AddOptions()">Add Option</a>
+            </div>
+        </div>
+        <div class="form-group" id="SecCorrectAnswer" style="display:none;">
+            @Html.LabelFor(model => model.AnswerText, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.AnswerText, new { @class = "form-control", @onchange="CheckValidAnswer()" })
+                @Html.ValidationMessageFor(model => model.AnswerText, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Add Question" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+
+
+    function AddOptions() {
+        var OptionsCount = $('[name=BlankOptions]').length + 1;
+        if ($("#QuestionType").val() == "1") {
+            var OptionsCount = $('[name=BlankOptions]').length + 1;
+            $("#OtherOptions").append("<textarea class='form-control' name='BlankOptions' placeholder='Blank Sentence " + OptionsCount + "'></textarea>");
+            $("#OtherOptions").append("<textarea class='form-control' name='AnswerOptions' placeholder='Answer Sentence " + OptionsCount + "'></textarea>");
+        }
+        else if ($("#QuestionType").val() == "2") {
+            //var OptionsCount = $('[name=Options]').length + 1;
+            $("#OtherOptions").append("<input type='text' class='form-control' name='BlankOptions' placeholder='Option " + OptionsCount + "' />");
+        }
+        else /*if ($("#QuestionType").val() == "3" || $("#QuestionType").val() == "4")*/ {
+            var OptionsCount = $('[name=BlankOptions]').length + 1;
+            $("#OtherOptions").append("<textarea class='form-control' name='AnswerOptions' placeholder='Answer Sentence " + OptionsCount + "'></textarea>");
+        }
+    }
+    function ShowOptions() {
+       if ($("#QuestionType").val() == "1" || $("#QuestionType").val() == "2" || $("#QuestionType").val() == "3" || $("#QuestionType").val() == "4" || $("#QuestionType").val() == "5") {
+            $("#OtherOptions").html("");
+            $("#SecCorrectAnswer").css("display", "none");
+            $("#QuestionOptions").css("display", "block");
+            if ($("#QuestionType").val() == "2") {
+                $("#SecCorrectAnswer").css("display", "block");
+            }
+        }
+        else {
+            $("#QuestionOptions").css("display", "none");
+        }
+    }
+
+    function CheckValidAnswer()
+    {
+        var Count = 0;
+        $('input[name="BlankOptions"]').each(function () {
+            if ($("#AnswerText").val() == $(this).val()) {
+                Count++;
+            }
+        });
+        
+        if (Count == 0) {
+            alert("This answer does not exist in the options.");
+            $("#AnswerText").val("");
+        }
+    }
+
+</script>

@@ -1,0 +1,132 @@
+﻿@model DAL.VTSUSER
+@{
+    ViewBag.Title = "Update Profile";
+}
+
+<style type="text/css">
+    .form-horizontal .form-group {
+        margin-left: 0 !important;
+    }
+</style>
+
+<h2>@ViewBag.Title.</h2>
+<hr />
+<div style="width:100%">
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <p style="text-align:right"> @Html.ActionLink("Change Password", "ChangePassword", new { ID = Model.UserID })</p>
+</div>
+<div class="row">
+    @using (Html.BeginForm("Manage", "Account", FormMethod.Post, new { id = "Form1", enctype = "multipart/form-data", @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-3">
+            @Html.TextBoxFor(x => x.Photo, new { @class = "text-hide", style = "border:0 !important" })
+            @{
+                var imagesrc = string.IsNullOrEmpty(Model.Photo) ? "/UploadedFiles/avatar.png" : Model.Photo;
+                <img src="@imagesrc" alt="@Model.FirstName" class="form-control" style="height:auto !important" />
+            }
+            <input type="file" name="imagefile" class="form-control" />
+        </div>
+        <div class="col-md-9">
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", Readonly = "readonly" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.FirstName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.LastName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.DOB, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    <input readonly="readonly" class="form-control valid" name="DOB" type="text" value="@Model.DOB.ToShortDateString()">
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Phone, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Phone, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Address, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.City, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.City, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.City, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.State, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.State, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.State, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Country, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Country, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Country, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Pincode, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(m => m.Pincode, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Pincode, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 control-label">Enable</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(m => m.IsActive, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" class="btn btn-default" value="Update Profile" />
+                </div>
+            </div>
+        </div>
+                }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script>
+    //// just for the demos, avoids form submit
+    //jQuery.validator.setDefaults({
+    //    debug: true,
+    //    success: "valid"
+    //});
+    //$("#Form1").validate({
+    //    rules: {
+    //        field: {
+    //            extension: "jpg|png"
+    //        }
+    //    }
+    //});
+</script>

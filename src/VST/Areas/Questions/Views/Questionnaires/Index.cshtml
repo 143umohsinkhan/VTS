@@ -1,0 +1,230 @@
+﻿@model IEnumerable<VST.Areas.Questions.Models.QuestionnairesViewModel>
+@using DAL;
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Questionnaires List</h2>
+<hr />
+<br />
+
+<table id="DataTable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            @*<th>
+
+            </th>*@
+            <th>S. No.</th>
+            <th>
+                Question
+
+            </th>
+            <th>
+                Question Type
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+        int i = 1;
+        if (ViewData["Questions1"] != null)
+        {
+           
+            foreach (var question in (List<Question1>)ViewData["Questions1"])
+            {
+                <tr>
+                    @*<td>
+                        <input type="checkbox" name="Checked" />
+                    </td>*@
+                    <td>@(i++)</td>
+
+                    <td>
+                       <strong>Quesiton Text: </strong> @question.QuestionSentence
+                        <br />
+                        <strong>Options: </strong><br />
+                        <ol>
+                            @foreach (Option1 option in question.Option1)
+                            {
+                                <li>@option.OptionText</li>
+                            }
+                        </ol>
+                       
+                        <strong>Answers:</strong><br />
+                        <ol>
+                            @foreach (Answer1 answer in question.Answer1)
+                            {
+                                <li>@answer.AnswerText</li>
+                            }
+                        </ol>
+
+                    </td>
+                    <td>
+                        Fill in the blanks
+                    </td>
+                    @*<td>
+                            @Html.DisplayFor(modelItem => item.AnswerText)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                        </td>*@
+                </tr>
+            }
+        }
+        
+        if (ViewData["Questions2"] != null)
+        {
+           
+            foreach (var question in (List<Question2>)ViewData["Questions2"])
+            {
+                <tr>
+                    @*<td>
+                        <input type="checkbox" name="Checked" />
+                    </td>*@
+                    <td>@(i++)</td>
+
+                    <td>
+                        <strong>Quesiton Text: </strong>@question.QuestionText
+                        <br />
+                        <strong>Options: </strong><br />
+                        <ol>
+                            @foreach (Option2 option in question.Option2)
+                            {
+                                <li>@option.OptionText</li>
+                            }
+                        </ol>
+
+                        <strong> Correct Answer:</strong><br />
+                        <ol>
+                            @foreach (Answer2 answer in question.Answer2)
+                            {
+                                <li>@answer.Answer</li>
+                            }
+                        </ol>
+
+                    </td>
+                    <td>
+                        Multiple Choices
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.AnswerText)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>*@
+                </tr>
+            }
+        }
+        if (ViewData["Questions3"] != null)
+        {
+
+            foreach (var question in (List<Question3>)ViewData["Questions3"])
+            {
+                <tr>
+                    @*<td>
+                        <input type="checkbox" name="Checked" />
+                    </td>*@
+                    <td>@(i++)</td>
+
+                    <td>
+                        <strong>Quesiton Text: </strong>@question.QuestionText
+                        <br />
+                        
+                        <strong> Correct Answers:</strong><br />
+                        <ol>
+                            @foreach (Answer3 answer in question.Answer3)
+                            {
+                                <li>@answer.Answer</li>
+                            }
+                        </ol>
+
+                    </td>
+                    <td>
+                        Complete Sentence 
+                    </td>
+                    
+                </tr>
+            }
+        }
+
+        if (ViewData["Questions4"] != null)
+        {
+
+            foreach (var question in (List<Question4>)ViewData["Questions4"])
+            {
+                <tr>
+                    @*<td>
+                        <input type="checkbox" name="Checked" />
+                    </td>*@
+                    <td>@(i++)</td>
+
+                    <td>
+                        <b>Quesiton Text: </b>@question.QuestionText
+                        <br />
+
+                        <strong> Correct Answers:</strong><br />
+                        <ol>
+                            @foreach (Answer4 answer in question.Answer4)
+                            {
+                                <li>@answer.Answer</li>
+                            }
+                        </ol>
+
+                    </td>
+                    <td>
+                        Rearrange Sentence
+                    </td>
+
+                </tr>
+            }
+        }
+
+        if (ViewData["Questions5"] != null)
+        {
+
+            foreach (var question in (List<Question5>)ViewData["Questions5"])
+            {
+                <tr>
+                    @*<td>
+                        <input type="checkbox" name="Checked" />
+                    </td>*@
+                    <td>@(i++)</td>
+
+                    <td>
+                        <strong>Quesiton Text: </strong> @question.QuestionText
+                        <br />
+
+                        <strong> Correct Answers:</strong><br />
+                        <ol>
+                            @foreach (Answer5 answer in question.Answer5)
+                            {
+                                <li>@answer.Answer</li>
+                            }
+                        </ol>
+
+                    </td>
+                    <td>
+                        Correct Errors in Sentence
+                    </td>
+
+                </tr>
+            }
+        }
+
+}
+    </tbody>
+</table>
+@section Scripts {
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.4.js" type="text/javascript"></script>
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#DataTable').DataTable();
+    });
+</script>
+}

@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DAL.VTSUSER>
+@{
+    ViewBag.Title = "Manage users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Manage users</h2>
+
+<table class="table table-hover table-responsive">
+    @{
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <thead>
+            <tr>
+                <th><b>Name</b></th>
+                <th><b>Email</b></th>
+                <th> <b>Manage</b></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                var className = item.IsActive ? "active" : "warning";
+                <tr class=@className>
+                    <td>
+                        @item.FirstName @item.LastName
+                    </td>
+                    <td>
+                        @item.Email
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit Profile", "Edit", new { id = item.UserID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        @Html.ActionLink("Create New User", "CreateUser")
+    }
+</table>

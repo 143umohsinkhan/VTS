@@ -1,0 +1,18 @@
+﻿@model IEnumerable<DAL.TestPaper>
+
+@{
+    ViewBag.Title = "STPU";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Choose Test Paper</h2>
+<table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Name, "InitTest", new { testPaperID = item.Id })
+            </td>
+        </tr>
+    }
+</table>

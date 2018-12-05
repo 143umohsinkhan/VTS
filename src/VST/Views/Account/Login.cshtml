@@ -1,0 +1,55 @@
+﻿@using VST.Models
+@model LoginViewModel
+
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="row">
+
+    <div class="col-md-8" style="padding-left:15%">
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                <h3>Online Verbal Test System.</h3>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group inputWithIcon">
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Enter your email" })
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group inputWithIcon">
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Enter password" })
+                    <i class="fa fa-key" aria-hidden="true"></i>
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox">
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Log in" class="btn btn-default" />
+                </div>
+                <div style="padding-left:0px !important;">
+                    <div class="col-md-2" >
+                        @Html.ActionLink("Register", "Register")
+                    </div>
+                    <br/>
+                    <div class="col-md-6">
+                        @Html.ActionLink("Forgot password?", "ForgotPassword")
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

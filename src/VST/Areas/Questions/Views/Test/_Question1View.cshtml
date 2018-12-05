@@ -1,0 +1,33 @@
+﻿@model DAL.Question1
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Question
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuestionSentence)
+        </dd>
+
+    </dl>
+    <dl class="dl-horizontal">
+        @{
+            if (Model.Option1 != null)
+            {
+                <ol type="1">
+                    @foreach (var option in Model.Option1)
+                    {
+                        <li>
+                            @Html.DisplayFor(x => option.OptionText)
+                        </li>
+                    }
+                </ol>
+            }
+        }
+    </dl>
+</div>
+@*<p>
+        @Html.ActionLink("Submit", "Edit", new { id = Model.QuestionID })
+    </p>*@

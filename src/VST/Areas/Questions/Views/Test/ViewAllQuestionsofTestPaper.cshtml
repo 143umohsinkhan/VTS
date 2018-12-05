@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DAL.Models.QuestionViewModel>
+
+@{
+    ViewBag.Title = "ViewAllQuestionsofTestPaper";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Questions</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Question
+        </th>
+        <th>
+            Question Type
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuestionTypeText)
+            </td>
+        </tr>
+    }
+</table>
+
+<div>
+    @Html.ActionLink("Back to List", "ViewAllTestPapers")
+</div>

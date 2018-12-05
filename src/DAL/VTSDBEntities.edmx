@@ -1,0 +1,1018 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="VTSDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Answer1">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="AnswerText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answer2">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="bigint" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="Answer" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answer3">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="Answer" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answer4">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="Answer" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Answer5">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="Answer" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Option1">
+          <Key>
+            <PropertyRef Name="OptionID" />
+          </Key>
+          <Property Name="OptionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="OptionText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Option2">
+          <Key>
+            <PropertyRef Name="OptionID" />
+          </Key>
+          <Property Name="OptionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="bigint" Nullable="false" />
+          <Property Name="OptionText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question1">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OriginalSentence" Type="varchar(max)" Nullable="false" />
+          <Property Name="QuestionSentence" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question2">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question3">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question4">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question5">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionText" Type="varchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestPaper">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TestQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionID" Type="int" Nullable="false" />
+          <Property Name="QuetionType" Type="varchar(max)" Nullable="false" />
+          <Property Name="TestPaperID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="TestID" Type="int" Nullable="false" />
+          <Property Name="TotalScore" Type="bigint" />
+          <Property Name="CreatedOn" Type="date" />
+          <Property Name="TestStatus" Type="bit" />
+        </EntityType>
+        <EntityType Name="UserTestAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="bigint" Nullable="false" />
+          <Property Name="TestID" Type="int" Nullable="false" />
+          <Property Name="QuestionID" Type="int" Nullable="false" />
+          <Property Name="UserTestID" Type="int" Nullable="false" />
+          <Property Name="QuestionType" Type="varchar(max)" Nullable="false" />
+          <Property Name="AnswerID" Type="int" />
+          <Property Name="AnswerText" Type="varchar(max)" />
+          <Property Name="IsCorrect" Type="bit" Nullable="false" />
+          <Property Name="IsAttempt" Type="bit" Nullable="false" />
+          <Property Name="Point" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VTSUSER">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="varchar(max)" Nullable="false" />
+          <Property Name="FirstName" Type="varchar(max)" Nullable="false" />
+          <Property Name="LastName" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sex" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="Password" Type="varchar(max)" Nullable="false" />
+          <Property Name="LastUpdatePassword" Type="datetime" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+          <Property Name="State" Type="varchar" MaxLength="100" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="Pincode" Type="varchar" MaxLength="100" />
+          <Property Name="Phone" Type="varchar" MaxLength="100" />
+          <Property Name="Photo" Type="varchar" MaxLength="5000" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+        </EntityType>
+        <Association Name="FK__Answer1__Questio__060DEAE8">
+          <End Role="Question1" Type="Self.Question1" Multiplicity="1" />
+          <End Role="Answer1" Type="Self.Answer1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question1">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer1">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer2__Questio__08EA5793">
+          <End Role="Question2" Type="Self.Question2" Multiplicity="1" />
+          <End Role="Answer2" Type="Self.Answer2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question2">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer2">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer3__Questio__1FCDBCEB">
+          <End Role="Question3" Type="Self.Question3" Multiplicity="1" />
+          <End Role="Answer3" Type="Self.Answer3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question3">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer3">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer4__Questio__2C3393D0">
+          <End Role="Question4" Type="Self.Question4" Multiplicity="1" />
+          <End Role="Answer4" Type="Self.Answer4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question4">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer4">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer5__Questio__30F848ED">
+          <End Role="Question5" Type="Self.Question5" Multiplicity="1" />
+          <End Role="Answer5" Type="Self.Answer5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question5">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer5">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Option1__Questio__0BC6C43E">
+          <End Role="Question1" Type="Self.Question1" Multiplicity="1" />
+          <End Role="Option1" Type="Self.Option1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question1">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Option1">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Option2__Questio__0EA330E9">
+          <End Role="Question2" Type="Self.Question2" Multiplicity="1" />
+          <End Role="Option2" Type="Self.Option2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question2">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Option2">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TestQuest__TestP__5FB337D6">
+          <End Role="TestPaper" Type="Self.TestPaper" Multiplicity="1" />
+          <End Role="TestQuestion" Type="Self.TestQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TestQuestion">
+              <PropertyRef Name="TestPaperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTest__TestID__19DFD96B">
+          <End Role="TestPaper" Type="Self.TestPaper" Multiplicity="1" />
+          <End Role="UserTest" Type="Self.UserTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTest">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTest__UserID__18EBB532">
+          <End Role="VTSUSER" Type="Self.VTSUSER" Multiplicity="1" />
+          <End Role="UserTest" Type="Self.UserTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VTSUSER">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserTest">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTestA__TestI__1F98B2C1">
+          <End Role="TestPaper" Type="Self.TestPaper" Multiplicity="1" />
+          <End Role="UserTestAnswer" Type="Self.UserTestAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTestAnswer">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTestA__UserI__1EA48E88">
+          <End Role="VTSUSER" Type="Self.VTSUSER" Multiplicity="1" />
+          <End Role="UserTestAnswer" Type="Self.UserTestAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VTSUSER">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserTestAnswer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTestA__UserT__208CD6FA">
+          <End Role="UserTest" Type="Self.UserTest" Multiplicity="1" />
+          <End Role="UserTestAnswer" Type="Self.UserTestAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTestAnswer">
+              <PropertyRef Name="UserTestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VTSDBModelStoreContainer">
+          <EntitySet Name="Answer1" EntityType="Self.Answer1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answer2" EntityType="Self.Answer2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answer3" EntityType="Self.Answer3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answer4" EntityType="Self.Answer4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Answer5" EntityType="Self.Answer5" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Option1" EntityType="Self.Option1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Option2" EntityType="Self.Option2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question1" EntityType="Self.Question1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question2" EntityType="Self.Question2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question3" EntityType="Self.Question3" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question4" EntityType="Self.Question4" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question5" EntityType="Self.Question5" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestPaper" EntityType="Self.TestPaper" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestQuestion" EntityType="Self.TestQuestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTest" EntityType="Self.UserTest" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTestAnswer" EntityType="Self.UserTestAnswer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="VTSUSER" EntityType="Self.VTSUSER" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Answer1__Questio__060DEAE8" Association="Self.FK__Answer1__Questio__060DEAE8">
+            <End Role="Question1" EntitySet="Question1" />
+            <End Role="Answer1" EntitySet="Answer1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer2__Questio__08EA5793" Association="Self.FK__Answer2__Questio__08EA5793">
+            <End Role="Question2" EntitySet="Question2" />
+            <End Role="Answer2" EntitySet="Answer2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer3__Questio__1FCDBCEB" Association="Self.FK__Answer3__Questio__1FCDBCEB">
+            <End Role="Question3" EntitySet="Question3" />
+            <End Role="Answer3" EntitySet="Answer3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer4__Questio__2C3393D0" Association="Self.FK__Answer4__Questio__2C3393D0">
+            <End Role="Question4" EntitySet="Question4" />
+            <End Role="Answer4" EntitySet="Answer4" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer5__Questio__30F848ED" Association="Self.FK__Answer5__Questio__30F848ED">
+            <End Role="Question5" EntitySet="Question5" />
+            <End Role="Answer5" EntitySet="Answer5" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Option1__Questio__0BC6C43E" Association="Self.FK__Option1__Questio__0BC6C43E">
+            <End Role="Question1" EntitySet="Question1" />
+            <End Role="Option1" EntitySet="Option1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Option2__Questio__0EA330E9" Association="Self.FK__Option2__Questio__0EA330E9">
+            <End Role="Question2" EntitySet="Question2" />
+            <End Role="Option2" EntitySet="Option2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TestQuest__TestP__5FB337D6" Association="Self.FK__TestQuest__TestP__5FB337D6">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="TestQuestion" EntitySet="TestQuestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTest__TestID__19DFD96B" Association="Self.FK__UserTest__TestID__19DFD96B">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="UserTest" EntitySet="UserTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTest__UserID__18EBB532" Association="Self.FK__UserTest__UserID__18EBB532">
+            <End Role="VTSUSER" EntitySet="VTSUSER" />
+            <End Role="UserTest" EntitySet="UserTest" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTestA__TestI__1F98B2C1" Association="Self.FK__UserTestA__TestI__1F98B2C1">
+            <End Role="TestPaper" EntitySet="TestPaper" />
+            <End Role="UserTestAnswer" EntitySet="UserTestAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTestA__UserI__1EA48E88" Association="Self.FK__UserTestA__UserI__1EA48E88">
+            <End Role="VTSUSER" EntitySet="VTSUSER" />
+            <End Role="UserTestAnswer" EntitySet="UserTestAnswer" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTestA__UserT__208CD6FA" Association="Self.FK__UserTestA__UserT__208CD6FA">
+            <End Role="UserTest" EntitySet="UserTest" />
+            <End Role="UserTestAnswer" EntitySet="UserTestAnswer" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VTSDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="VTSUSER">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sex" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastUpdatePassword" Type="DateTime" Precision="3" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Pincode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserTests" Relationship="VTSDBModel.FK__UserTest__UserID__6B24EA82" FromRole="VTSUSER" ToRole="UserTest" />
+          <NavigationProperty Name="UserTestAnswers" Relationship="VTSDBModel.FK__UserTestA__UserI__72C60C4A" FromRole="VTSUSER" ToRole="UserTestAnswer" />
+        </EntityType>
+        <EntityContainer Name="VTSDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="VTSUSERs" EntityType="Self.VTSUSER" />
+          <EntitySet Name="Answer1" EntityType="VTSDBModel.Answer1" />
+          <EntitySet Name="Answer2" EntityType="VTSDBModel.Answer2" />
+          <EntitySet Name="Option1" EntityType="VTSDBModel.Option1" />
+          <EntitySet Name="Option2" EntityType="VTSDBModel.Option2" />
+          <EntitySet Name="Question1" EntityType="VTSDBModel.Question1" />
+          <EntitySet Name="Question2" EntityType="VTSDBModel.Question2" />
+          <AssociationSet Name="FK__Answer1__Questio__49C3F6B7" Association="VTSDBModel.FK__Answer1__Questio__49C3F6B7">
+            <End Role="Question1" EntitySet="Question1" />
+            <End Role="Answer1" EntitySet="Answer1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer2__Questio__5165187F" Association="VTSDBModel.FK__Answer2__Questio__5165187F">
+            <End Role="Question2" EntitySet="Question2" />
+            <End Role="Answer2" EntitySet="Answer2" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Option1__Questio__440B1D61" Association="VTSDBModel.FK__Option1__Questio__440B1D61">
+            <End Role="Question1" EntitySet="Question1" />
+            <End Role="Option1" EntitySet="Option1" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Option2__Questio__4E88ABD4" Association="VTSDBModel.FK__Option2__Questio__4E88ABD4">
+            <End Role="Question2" EntitySet="Question2" />
+            <End Role="Option2" EntitySet="Option2" />
+          </AssociationSet>
+          <EntitySet Name="TestPapers" EntityType="VTSDBModel.TestPaper" />
+          <EntitySet Name="TestQuestions" EntityType="VTSDBModel.TestQuestion" />
+          <EntitySet Name="UserTests" EntityType="VTSDBModel.UserTest" />
+          <EntitySet Name="UserTestAnswers" EntityType="VTSDBModel.UserTestAnswer" />
+          <AssociationSet Name="FK__TestQuest__TestP__5FB337D6" Association="VTSDBModel.FK__TestQuest__TestP__5FB337D6">
+            <End Role="TestPaper" EntitySet="TestPapers" />
+            <End Role="TestQuestion" EntitySet="TestQuestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTest__TestID__6C190EBB" Association="VTSDBModel.FK__UserTest__TestID__6C190EBB">
+            <End Role="TestPaper" EntitySet="TestPapers" />
+            <End Role="UserTest" EntitySet="UserTests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTestA__TestI__73BA3083" Association="VTSDBModel.FK__UserTestA__TestI__73BA3083">
+            <End Role="TestPaper" EntitySet="TestPapers" />
+            <End Role="UserTestAnswer" EntitySet="UserTestAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTest__UserID__6B24EA82" Association="VTSDBModel.FK__UserTest__UserID__6B24EA82">
+            <End Role="VTSUSER" EntitySet="VTSUSERs" />
+            <End Role="UserTest" EntitySet="UserTests" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTestA__UserI__72C60C4A" Association="VTSDBModel.FK__UserTestA__UserI__72C60C4A">
+            <End Role="VTSUSER" EntitySet="VTSUSERs" />
+            <End Role="UserTestAnswer" EntitySet="UserTestAnswers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserTestA__UserT__208CD6FA" Association="VTSDBModel.FK__UserTestA__UserT__208CD6FA">
+            <End Role="UserTest" EntitySet="UserTests" />
+            <End Role="UserTestAnswer" EntitySet="UserTestAnswers" />
+          </AssociationSet>
+          <EntitySet Name="Answer3" EntityType="VTSDBModel.Answer3" />
+          <EntitySet Name="Answer4" EntityType="VTSDBModel.Answer4" />
+          <EntitySet Name="Answer5" EntityType="VTSDBModel.Answer5" />
+          <EntitySet Name="Question3" EntityType="VTSDBModel.Question3" />
+          <EntitySet Name="Question4" EntityType="VTSDBModel.Question4" />
+          <EntitySet Name="Question5" EntityType="VTSDBModel.Question5" />
+          <AssociationSet Name="FK__Answer3__Questio__1FCDBCEB" Association="VTSDBModel.FK__Answer3__Questio__1FCDBCEB">
+            <End Role="Question3" EntitySet="Question3" />
+            <End Role="Answer3" EntitySet="Answer3" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer4__Questio__2C3393D0" Association="VTSDBModel.FK__Answer4__Questio__2C3393D0">
+            <End Role="Question4" EntitySet="Question4" />
+            <End Role="Answer4" EntitySet="Answer4" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Answer5__Questio__30F848ED" Association="VTSDBModel.FK__Answer5__Questio__30F848ED">
+            <End Role="Question5" EntitySet="Question5" />
+            <End Role="Answer5" EntitySet="Answer5" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Answer1">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int64" Nullable="false" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="AnswerText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question1" Relationship="VTSDBModel.FK__Answer1__Questio__49C3F6B7" FromRole="Answer1" ToRole="Question1" />
+        </EntityType>
+        <EntityType Name="Answer2">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int64" Nullable="false" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="false" />
+          <NavigationProperty Name="Question2" Relationship="VTSDBModel.FK__Answer2__Questio__5165187F" FromRole="Answer2" ToRole="Question2" />
+        </EntityType>
+        <EntityType Name="Option1">
+          <Key>
+            <PropertyRef Name="OptionID" />
+          </Key>
+          <Property Name="OptionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="OptionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question1" Relationship="VTSDBModel.FK__Option1__Questio__440B1D61" FromRole="Option1" ToRole="Question1" />
+        </EntityType>
+        <EntityType Name="Option2">
+          <Key>
+            <PropertyRef Name="OptionID" />
+          </Key>
+          <Property Name="OptionID" Type="Int64" Nullable="false" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="OptionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question2" Relationship="VTSDBModel.FK__Option2__Questio__4E88ABD4" FromRole="Option2" ToRole="Question2" />
+        </EntityType>
+        <EntityType Name="Question1">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OriginalSentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="QuestionSentence" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Answer1" Relationship="VTSDBModel.FK__Answer1__Questio__49C3F6B7" FromRole="Question1" ToRole="Answer1" />
+          <NavigationProperty Name="Option1" Relationship="VTSDBModel.FK__Option1__Questio__440B1D61" FromRole="Question1" ToRole="Option1" />
+        </EntityType>
+        <EntityType Name="Question2">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="QuestionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Answer2" Relationship="VTSDBModel.FK__Answer2__Questio__5165187F" FromRole="Question2" ToRole="Answer2" />
+          <NavigationProperty Name="Option2" Relationship="VTSDBModel.FK__Option2__Questio__4E88ABD4" FromRole="Question2" ToRole="Option2" />
+        </EntityType>
+        <Association Name="FK__Answer1__Questio__49C3F6B7">
+          <End Type="VTSDBModel.Question1" Role="Question1" Multiplicity="1" />
+          <End Type="VTSDBModel.Answer1" Role="Answer1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question1">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer1">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer2__Questio__5165187F">
+          <End Type="VTSDBModel.Question2" Role="Question2" Multiplicity="1" />
+          <End Type="VTSDBModel.Answer2" Role="Answer2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question2">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer2">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Option1__Questio__440B1D61">
+          <End Type="VTSDBModel.Question1" Role="Question1" Multiplicity="1" />
+          <End Type="VTSDBModel.Option1" Role="Option1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question1">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Option1">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Option2__Questio__4E88ABD4">
+          <End Type="VTSDBModel.Question2" Role="Question2" Multiplicity="1" />
+          <End Type="VTSDBModel.Option2" Role="Option2" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question2">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Option2">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TestPaper">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="TestQuestions" Relationship="VTSDBModel.FK__TestQuest__TestP__5FB337D6" FromRole="TestPaper" ToRole="TestQuestion" />
+          <NavigationProperty Name="UserTests" Relationship="VTSDBModel.FK__UserTest__TestID__6C190EBB" FromRole="TestPaper" ToRole="UserTest" />
+          <NavigationProperty Name="UserTestAnswers" Relationship="VTSDBModel.FK__UserTestA__TestI__73BA3083" FromRole="TestPaper" ToRole="UserTestAnswer" />
+        </EntityType>
+        <EntityType Name="TestQuestion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int32" Nullable="false" />
+          <Property Name="QuetionType" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TestPaperID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TestPaper" Relationship="VTSDBModel.FK__TestQuest__TestP__5FB337D6" FromRole="TestQuestion" ToRole="TestPaper" />
+        </EntityType>
+        <EntityType Name="UserTest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="TestID" Type="Int32" Nullable="false" />
+          <Property Name="TotalScore" Type="Int64" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="TestPaper" Relationship="VTSDBModel.FK__UserTest__TestID__6C190EBB" FromRole="UserTest" ToRole="TestPaper" />
+          <NavigationProperty Name="VTSUSER" Relationship="VTSDBModel.FK__UserTest__UserID__6B24EA82" FromRole="UserTest" ToRole="VTSUSER" />
+          <Property Name="TestStatus" Type="Boolean" />
+          <NavigationProperty Name="UserTestAnswers" Relationship="VTSDBModel.FK__UserTestA__UserT__208CD6FA" FromRole="UserTest" ToRole="UserTestAnswer" />
+        </EntityType>
+        <EntityType Name="UserTestAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int64" Nullable="false" />
+          <Property Name="TestID" Type="Int32" Nullable="false" />
+          <Property Name="QuestionID" Type="Int32" Nullable="false" />
+          <Property Name="QuestionType" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AnswerID" Type="Int32" />
+          <Property Name="AnswerText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="IsCorrect" Type="Boolean" Nullable="false" />
+          <Property Name="IsAttempt" Type="Boolean" Nullable="false" />
+          <Property Name="Point" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="TestPaper" Relationship="VTSDBModel.FK__UserTestA__TestI__73BA3083" FromRole="UserTestAnswer" ToRole="TestPaper" />
+          <NavigationProperty Name="VTSUSER" Relationship="VTSDBModel.FK__UserTestA__UserI__72C60C4A" FromRole="UserTestAnswer" ToRole="VTSUSER" />
+          <Property Name="UserTestID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="UserTest" Relationship="VTSDBModel.FK__UserTestA__UserT__208CD6FA" FromRole="UserTestAnswer" ToRole="UserTest" />
+        </EntityType>
+        <Association Name="FK__TestQuest__TestP__5FB337D6">
+          <End Type="VTSDBModel.TestPaper" Role="TestPaper" Multiplicity="1" />
+          <End Type="VTSDBModel.TestQuestion" Role="TestQuestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TestQuestion">
+              <PropertyRef Name="TestPaperID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTest__TestID__6C190EBB">
+          <End Type="VTSDBModel.TestPaper" Role="TestPaper" Multiplicity="1" />
+          <End Type="VTSDBModel.UserTest" Role="UserTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTest">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTestA__TestI__73BA3083">
+          <End Type="VTSDBModel.TestPaper" Role="TestPaper" Multiplicity="1" />
+          <End Type="VTSDBModel.UserTestAnswer" Role="UserTestAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TestPaper">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTestAnswer">
+              <PropertyRef Name="TestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTest__UserID__6B24EA82">
+          <End Type="VTSDBModel.VTSUSER" Role="VTSUSER" Multiplicity="1" />
+          <End Type="VTSDBModel.UserTest" Role="UserTest" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VTSUSER">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserTest">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTestA__UserI__72C60C4A">
+          <End Type="VTSDBModel.VTSUSER" Role="VTSUSER" Multiplicity="1" />
+          <End Type="VTSDBModel.UserTestAnswer" Role="UserTestAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VTSUSER">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="UserTestAnswer">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserTestA__UserT__208CD6FA">
+          <End Type="VTSDBModel.UserTest" Role="UserTest" Multiplicity="1" />
+          <End Type="VTSDBModel.UserTestAnswer" Role="UserTestAnswer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserTest">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="UserTestAnswer">
+              <PropertyRef Name="UserTestID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Answer3">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question3" Relationship="VTSDBModel.FK__Answer3__Questio__1FCDBCEB" FromRole="Answer3" ToRole="Question3" />
+        </EntityType>
+        <EntityType Name="Answer4">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question4" Relationship="VTSDBModel.FK__Answer4__Questio__2C3393D0" FromRole="Answer4" ToRole="Question4" />
+        </EntityType>
+        <EntityType Name="Answer5">
+          <Key>
+            <PropertyRef Name="AnswerID" />
+          </Key>
+          <Property Name="AnswerID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionID" Type="Int64" Nullable="false" />
+          <Property Name="Answer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Question5" Relationship="VTSDBModel.FK__Answer5__Questio__30F848ED" FromRole="Answer5" ToRole="Question5" />
+        </EntityType>
+        <EntityType Name="Question3">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Answer3" Relationship="VTSDBModel.FK__Answer3__Questio__1FCDBCEB" FromRole="Question3" ToRole="Answer3" />
+        </EntityType>
+        <EntityType Name="Question4">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Answer4" Relationship="VTSDBModel.FK__Answer4__Questio__2C3393D0" FromRole="Question4" ToRole="Answer4" />
+        </EntityType>
+        <EntityType Name="Question5">
+          <Key>
+            <PropertyRef Name="QuestionID" />
+          </Key>
+          <Property Name="QuestionID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionText" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Answer5" Relationship="VTSDBModel.FK__Answer5__Questio__30F848ED" FromRole="Question5" ToRole="Answer5" />
+        </EntityType>
+        <Association Name="FK__Answer3__Questio__1FCDBCEB">
+          <End Type="VTSDBModel.Question3" Role="Question3" Multiplicity="1" />
+          <End Type="VTSDBModel.Answer3" Role="Answer3" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question3">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer3">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer4__Questio__2C3393D0">
+          <End Type="VTSDBModel.Question4" Role="Question4" Multiplicity="1" />
+          <End Type="VTSDBModel.Answer4" Role="Answer4" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question4">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer4">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Answer5__Questio__30F848ED">
+          <End Type="VTSDBModel.Question5" Role="Question5" Multiplicity="1" />
+          <End Type="VTSDBModel.Answer5" Role="Answer5" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question5">
+              <PropertyRef Name="QuestionID" />
+            </Principal>
+            <Dependent Role="Answer5">
+              <PropertyRef Name="QuestionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="VTSDBModelStoreContainer" CdmEntityContainer="VTSDBEntities">
+          <EntitySetMapping Name="VTSUSERs">
+            <EntityTypeMapping TypeName="VTSDBModel.VTSUSER">
+              <MappingFragment StoreEntitySet="VTSUSER">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastUpdatePassword" ColumnName="LastUpdatePassword" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answer1">
+            <EntityTypeMapping TypeName="VTSDBModel.Answer1">
+              <MappingFragment StoreEntitySet="Answer1">
+                <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answer2">
+            <EntityTypeMapping TypeName="VTSDBModel.Answer2">
+              <MappingFragment StoreEntitySet="Answer2">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Option1">
+            <EntityTypeMapping TypeName="VTSDBModel.Option1">
+              <MappingFragment StoreEntitySet="Option1">
+                <ScalarProperty Name="OptionText" ColumnName="OptionText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="OptionID" ColumnName="OptionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Option2">
+            <EntityTypeMapping TypeName="VTSDBModel.Option2">
+              <MappingFragment StoreEntitySet="Option2">
+                <ScalarProperty Name="OptionText" ColumnName="OptionText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="OptionID" ColumnName="OptionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question1">
+            <EntityTypeMapping TypeName="VTSDBModel.Question1">
+              <MappingFragment StoreEntitySet="Question1">
+                <ScalarProperty Name="QuestionSentence" ColumnName="QuestionSentence" />
+                <ScalarProperty Name="OriginalSentence" ColumnName="OriginalSentence" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question2">
+            <EntityTypeMapping TypeName="VTSDBModel.Question2">
+              <MappingFragment StoreEntitySet="Question2">
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestPapers">
+            <EntityTypeMapping TypeName="VTSDBModel.TestPaper">
+              <MappingFragment StoreEntitySet="TestPaper">
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestQuestions">
+            <EntityTypeMapping TypeName="VTSDBModel.TestQuestion">
+              <MappingFragment StoreEntitySet="TestQuestion">
+                <ScalarProperty Name="TestPaperID" ColumnName="TestPaperID" />
+                <ScalarProperty Name="QuetionType" ColumnName="QuetionType" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTests">
+            <EntityTypeMapping TypeName="VTSDBModel.UserTest">
+              <MappingFragment StoreEntitySet="UserTest">
+                <ScalarProperty Name="TestStatus" ColumnName="TestStatus" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="TotalScore" ColumnName="TotalScore" />
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTestAnswers">
+            <EntityTypeMapping TypeName="VTSDBModel.UserTestAnswer">
+              <MappingFragment StoreEntitySet="UserTestAnswer">
+                <ScalarProperty Name="UserTestID" ColumnName="UserTestID" />
+                <ScalarProperty Name="Point" ColumnName="Point" />
+                <ScalarProperty Name="IsAttempt" ColumnName="IsAttempt" />
+                <ScalarProperty Name="IsCorrect" ColumnName="IsCorrect" />
+                <ScalarProperty Name="AnswerText" ColumnName="AnswerText" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+                <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="TestID" ColumnName="TestID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answer3">
+            <EntityTypeMapping TypeName="VTSDBModel.Answer3">
+              <MappingFragment StoreEntitySet="Answer3">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answer4">
+            <EntityTypeMapping TypeName="VTSDBModel.Answer4">
+              <MappingFragment StoreEntitySet="Answer4">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Answer5">
+            <EntityTypeMapping TypeName="VTSDBModel.Answer5">
+              <MappingFragment StoreEntitySet="Answer5">
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+                <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question3">
+            <EntityTypeMapping TypeName="VTSDBModel.Question3">
+              <MappingFragment StoreEntitySet="Question3">
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question4">
+            <EntityTypeMapping TypeName="VTSDBModel.Question4">
+              <MappingFragment StoreEntitySet="Question4">
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Question5">
+            <EntityTypeMapping TypeName="VTSDBModel.Question5">
+              <MappingFragment StoreEntitySet="Question5">
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+                <ScalarProperty Name="QuestionID" ColumnName="QuestionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
